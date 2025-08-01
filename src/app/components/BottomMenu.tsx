@@ -67,20 +67,20 @@ export default function BottomMenu() {
                 visible ? 'translate-y-0' : 'translate-y-100'
             )}
         >
-            <div className="mx-auto max-w-xl rounded-full bg-green-100 dark:bg-[#14532d] p-4 shadow-lg flex justify-between items-center gap-4">
+            <div className="mx-auto max-w-xl rounded-full bg-green-100 dark:bg-[#14532d] px-4 p-2 shadow-lg flex justify-between items-center gap-4">
                 {menuItems.map(({ label, icon: Icon, href }) => (
                     <Link
                         key={label}
                         href={href}
                         className={clsx(
-                            'flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-200 text-sm md:text-base',
+                            'group flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-200 text-sm md:text-base w-fit',
                             active === href
                                 ? 'bg-green-300 dark:bg-green-800 text-green-900 dark:text-green-100'
                                 : 'hover:bg-green-200 dark:hover:bg-green-900 text-green-900 dark:text-green-100'
                         )}
                     >
                         <Icon className="h-5 w-5" />
-                        <span>{label}</span>
+                        <span className='text-xs md:text-base md:w-fit w-0 overflow-hidden group-hover:w-fit md:opacity-100 opacity-0 group-hover:opacity-100 transition-all duration-400'>{label}</span>
                     </Link>
                 ))}
             </div>

@@ -68,7 +68,7 @@ export default function Contact() {
         },
     };
 
-    const iconVariants = {
+    const animationProps = {
         initial: { opacity: 0, scale: 0.8 },
         animate: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 20 } },
         exit: { opacity: 0, scale: 0.8 },
@@ -123,14 +123,16 @@ export default function Contact() {
                         <Input placeholder="Your Name" name="name" required className="bg-white dark:bg-zinc-900" />
                         <Input placeholder="Your Email" name="email" type="email" required className="bg-white dark:bg-zinc-900" />
                         <Textarea placeholder="Your Message" name="message" rows={6} required className="bg-white dark:bg-zinc-900" />
+
+
                         <motion.div
                             className="relative w-full h-12" // Wrapper div to keep a consistent button height
                         >
                             <motion.button
                                 type="submit"
-                                disabled={buttonState === 'sending' || buttonState === 'sent' || buttonState === 'error'}
+                                disabled={buttonState === 'sending'}
                                 className={cn(
-                                    'w-fit h-12 rounded-full px-4 text-base font-medium flex items-center justify-center gap-2',
+                                    'w-full h-12 rounded-full px-4 text-base font-medium flex items-center justify-center gap-2',
                                     'text-white transition-all duration-300',
                                     'focus:outline-none focus:ring-2 focus:ring-offset-2',
                                     'absolute top-0 left-0'
@@ -140,25 +142,25 @@ export default function Contact() {
                             >
                                 <AnimatePresence mode="wait">
                                     {buttonState === 'idle' && (
-                                        <motion.div key="send-icon" className="flex items-center gap-2" variants={iconVariants} initial="initial" animate="animate" exit="exit">
+                                        <motion.div key="send-icon" className="flex items-center gap-2" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 20 } }} exit={{ opacity: 0, scale: 0.8 }}>
                                             <Send size={16} />
                                             <span>Send Message</span>
                                         </motion.div>
                                     )}
                                     {buttonState === 'sending' && (
-                                        <motion.div key="loading-icon" className="flex items-center gap-2" variants={iconVariants} initial="initial" animate="animate" exit="exit">
+                                        <motion.div key="loading-icon" className="flex items-center gap-2" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 20 } }} exit={{ opacity: 0, scale: 0.8 }}>
                                             <Loader2 size={16} className="animate-spin" />
                                             <span>Sending...</span>
                                         </motion.div>
                                     )}
                                     {buttonState === 'sent' && (
-                                        <motion.div key="sent-icon" className="flex items-center gap-2" variants={iconVariants} initial="initial" animate="animate" exit="exit">
+                                        <motion.div key="sent-icon" className="flex items-center gap-2" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 20 } }} exit={{ opacity: 0, scale: 0.8 }}>
                                             <Check size={16} />
                                             <span>Sent!</span>
                                         </motion.div>
                                     )}
                                     {buttonState === 'error' && (
-                                        <motion.div key="error-icon" className="flex items-center gap-2" variants={iconVariants} initial="initial" animate="animate" exit="exit">
+                                        <motion.div key="error-icon" className="flex items-center gap-2" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 20 } }} exit={{ opacity: 0, scale: 0.8 }}>
                                             <X size={16} />
                                             <span>Error</span>
                                         </motion.div>

@@ -3,7 +3,6 @@
 import { Mail, Send, Github, Linkedin, Loader2, Check, X } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Button } from '@/components/ui/button'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { cn } from '@/lib/utils'
@@ -66,12 +65,6 @@ export default function Contact() {
             color: '#ffffff',
             scale: 1.05,
         },
-    };
-
-    const animationProps = {
-        initial: { opacity: 0, scale: 0.8 },
-        animate: { opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 20 } },
-        exit: { opacity: 0, scale: 0.8 },
     };
 
     return (

@@ -1,12 +1,10 @@
 'use client'
 
-import { Menu, Sun, Moon } from 'lucide-react'
-import { useState } from 'react'
+import { Menu } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 import { useVisibility } from './VisibilityContext'
 
 export default function TopNav() {
-    const [menuOpen, setMenuOpen] = useState(false)
     const { changeVisibility } = useVisibility();
 
     return (

@@ -1,8 +1,6 @@
 import "./globals.css";
 import { Inter } from 'next/font/google'
 import TopNav from "./components/TopNav";
-import BottomMenu from "./components/BottomMenu";
-import { VisibilityProvider } from "./components/VisibilityContext";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -39,11 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${inter.className} bg-white text-black dark:bg-[#0f0f0f] dark:text-white transition-colors`}>
-        <VisibilityProvider>
-          <TopNav />
-          <main>{children}</main>
-          <BottomMenu />
-        </VisibilityProvider>
+        <TopNav />
+        <main>{children}</main>
       </body>
     </html>
   )

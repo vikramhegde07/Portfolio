@@ -5,8 +5,10 @@ import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function About() {
+    const [isMobile, setIsMobile] = useState(false);
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.2,
@@ -16,6 +18,19 @@ export default function About() {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0 },
     }
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 720);
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <section

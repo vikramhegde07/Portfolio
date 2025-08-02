@@ -25,8 +25,8 @@ const projects = [
         title: 'PG Management SaaS',
         description: 'Multi-tenant SaaS for PG owners with subscription, analytics, and file storage. Currently in plannig stage, will be updated once finalized.',
         media: '/projects/pg-saas.mp4',
-        github: 'https://github.com/your/pg-saas',
-        live: 'https://pg.nodenomad.in'
+        // github: 'https://github.com/your/pg-saas',
+        // live: 'https://pg.nodenomad.in'
     },
     {
         title: "Multi-Factor Authentication",

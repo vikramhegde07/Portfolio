@@ -12,10 +12,17 @@ export const metadata = {
   creator: 'Vikram Hegde',
   openGraph: {
     title: 'Vikram Hegde | Web Developer',
-    description: 'Explore my work, projects, and contact details.',
+    description: 'Frontend developer building beautiful web experiences.Explore my work, projects, and contact details.',
     url: 'https://nodenomad.in',
-    siteName: 'Vikram Hegde Portfolio',
-    locale: 'en_IN',
+    siteName: "NodeNomad",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Vikram Hegde Portfolio",
+      },
+    ], locale: 'en_IN',
     type: 'website',
   },
   linkedin: {

@@ -13,7 +13,7 @@ const projects = [
         description: 'A private task manager with priority tagging. Used React + Vite + TS + TailwindCSS + ShadCN for Frontend and Node/Express + MongoDB + JWT for Backend',
         media: '/projects/task-manager.png',
         github: 'https://github.com/vikramhegde07/Task-Tracker',
-        live: 'https://taskmanager.nodenomad.in'
+        live: 'https://task.nodenomad.in'
     },
     {
         title: 'FAROPORT - Article Publisher',
